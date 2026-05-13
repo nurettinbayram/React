@@ -1,0 +1,61 @@
+:root {
+  --bg: #15173d;
+  --bg-selected: #58063d;
+  --pri: #982598;
+  --sec: #e491c9;
+  --thr: #f1e9e9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--thr);
+}
+
+nav {
+  background: var(--bg);
+  color: var(--pri);
+  padding: 10px;
+}
+
+nav div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav input {
+  width: 300px;
+  border: var(--pri) 2px solid;
+  border-radius: 10px;
+  color: var(--bg);
+  padding: 3px 5px;
+  background-color: var(--thr);
+}
+
+nav p {
+  font-size: 18px;
+}
+
+.card {
+  background-color: var(--bg);
+}
+
+.movie {
+  cursor: pointer;
+}
+
+.movie:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border: 2px solid #ffd700;
+}
+
+.selected-movie {
+  background-color: var(--bg-selected);
+}
