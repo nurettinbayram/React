@@ -1,5 +1,7 @@
 // import Login from "./components/Login";
-import Register from "./components/Register";
+// import Login from "./components/LoginState-Validation-Component";
+import Register from "./components/Register-FormData";
+// import Login from "./components/Login-Validation";
 
 function App() {
   return (
