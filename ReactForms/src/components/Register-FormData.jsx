@@ -1,26 +1,36 @@
+import { useState } from "react";
+
 export default function Register() {
+  const [isPasswordsMatch, setIsPasswordsMatch] = useState(false);
+
   function handleSubmit(e) {
     ///form submit ozelligini kapatmak icin preventDefault kullanildi.
     e.preventDefault();
 
-    //! INPUTTAN VERI ALMANIN BASKA BIR YOLU FROMDATA YONTEMI.
-    const fromData = new FormData(e.target);
+    //! INPUTTAN VERI ALMANIN BASKA BIR YOLU formData YONTEMI.
+    const formData = new FormData(e.target);
 
     ///get metodu ile inputun name propertisi verilerek key degeri seklinde bize degeri dondurur.
-    console.log(fromData.get("fullname"));
-    console.log(fromData.get("email"));
-    console.log(fromData.get("password"));
-    console.log(fromData.get("repassword"));
+    console.log(formData.get("fullname"));
+    console.log(formData.get("email"));
+    console.log(formData.get("password"));
+    console.log(formData.get("repassword"));
+
+    if (formData.get("password") !== formData.get("repassword")) {
+      setIsPasswordsMatch(true);
+      return;
+    }
+    setIsPasswordsMatch(false);
 
     ///checkbox seceneklerini get ile alamayiz bunun icin getAll metotu gereklidir.
-    console.log(fromData.getAll("hobbies")); //bir array dondurur.
+    console.log(formData.getAll("hobbies")); //bir array dondurur.
 
-    console.log("-------Object.fromEntries(fromData.entries())-----------");
+    console.log("-------Object.fromEntries(formData.entries())-----------");
     ///? YUKARIDAKI YONTEM ILE TUM VERILER CEKILEBILIR ANCAK DAHA IYI YONTEM BIR OBJE ICERISINDE SAKLAMAK OLUR.
     ///bu sekilde key valu sekilde verileri elde etmis oluruz ancak checkBox buna dahil edilmiyor bunun icin checkboxlari ayri alip dahil etmek gerekiyor.
-    const data = Object.fromEntries(fromData.entries());
-    const hobbies = fromData.getAll("hobbies");
-    data.hobbies = hobbies;
+    const data = Object.fromEntries(formData.entries());
+    const hobbies = formData.getAll("hobbies");
+    data.hobbies = hobbies; //DATA OBJESI ICINDE BIR HOBBIES ALANI OLUSTURULARAK HOBILER ONA ATANIR.
     console.log(data);
 
     //?FORMDAKI INPUTLARI SIFIRLAMAK
@@ -33,7 +43,7 @@ export default function Register() {
         <h1>Register</h1>
         <p>Please enter your info!</p>
       </div>
-
+      {/*/// required, maxLength={10}, minLength={5} gibi HTML5'in sagladigi validation kurallari mevcut.  */}
       <div className="mb-3">
         <label htmlFor="fullname" className="form-label">
           Name
@@ -43,6 +53,7 @@ export default function Register() {
           className="form-control"
           id="fullname"
           name="fullname"
+          required
         />
       </div>
 
@@ -50,7 +61,13 @@ export default function Register() {
         <label htmlFor="email" className="form-label">
           Email
         </label>
-        <input type="email" className="form-control" id="email" name="email" />
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          name="email"
+          required
+        />
       </div>
 
       <div className="row mb-3">
@@ -63,6 +80,9 @@ export default function Register() {
             className="form-control"
             id="password"
             name="password"
+            required
+            maxLength={10}
+            minLength={5}
           />
         </div>
         <div className="col-6">
@@ -74,7 +94,15 @@ export default function Register() {
             className="form-control"
             id="repassword"
             name="repassword"
+            required
+            maxLength={10}
+            minLength={5}
           />
+          {isPasswordsMatch && (
+            <div className="invalid-feedback d-block">
+              The password does NOT match...
+            </div>
+          )}
         </div>
       </div>
 
