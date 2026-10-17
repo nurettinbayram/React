@@ -1,0 +1,39 @@
+[
+  {
+    "items": [
+      {
+        "id": "1",
+        "title": "Çiftlik Evi",
+        "description": "Pizza sosu, mozzarella peyniri, salam, mantar",
+        "image": "1.jpg",
+        "price": "280",
+        "quantity": 1
+      },
+      {
+        "id": "2",
+        "title": "Sebzesever",
+        "description": "Pizza sosu, mozzarella peyniri, mantar, yeşilbiber, soğan, domates, mısır",
+        "image": "2.jpg",
+        "price": "270",
+        "quantity": 2
+      },
+      {
+        "id": "3",
+        "title": "Sucuk Mısır",
+        "description": "Pizza sosu, mozzarella peyniri, sucuk, mısır",
+        "image": "3.jpg",
+        "price": "285",
+        "quantity": 1
+      }
+    ],
+    "customer": {
+      "name": "Nurettin Bayram",
+      "phone": "6314162681",
+      "email": "fakhannurettin@gmail.com",
+      "address": "5 SWISSTONE ST",
+      "city": "MEDFORD",
+      "state": "NY"
+    },
+    "id": "1790648098750"
+  }
+]
