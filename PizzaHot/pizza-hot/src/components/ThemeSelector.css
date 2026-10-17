@@ -1,0 +1,23 @@
+.theme-selector{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.theme-selector span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mode-toogle{
+    margin-right: auto;
+}
+
+.mode-toogle i{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
