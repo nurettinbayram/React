@@ -14,6 +14,7 @@ export default function Cart() {
   );
 
   return (
+    //-> if the uiProgress usestate equal to cart, Modal will open
     <Modal open={uiProgress === "cart"}>
       <h2>Your Basket:</h2>
       {cartTotal == 0 ? (

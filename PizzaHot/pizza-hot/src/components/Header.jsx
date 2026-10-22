@@ -14,6 +14,7 @@ export default function Header() {
   const totalCartItems = items.reduce((total, item) => {
     return total + item.quantity;
   }, 0);
+
   return (
     <header>
       <nav

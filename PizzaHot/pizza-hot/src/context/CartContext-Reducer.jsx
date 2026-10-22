@@ -12,7 +12,7 @@ export function CartContextProvider({ children }) {
 
   //# add items to cart
   function addItem(item) {
-    dispatch({ type: "ADD_ITEM", item }); //# { type: "ADD_ITEM", payload:item } we can use this format too but no ned it.
+    dispatch({ type: "ADD_ITEM", item }); //# { type: "ADD_ITEM", payload:item } we can use this format too but no need it.
   }
 
   //# delate cart item
