@@ -31,6 +31,8 @@ export default function Checkout() {
 
     //-> Call form values.
     const formData = new FormData(e.target);
+
+    //=> Object.fromEntries(formData.entries()) provide the form data as json format.
     const customerData = Object.fromEntries(formData.entries());
 
     SendRequest(
@@ -44,6 +46,7 @@ export default function Checkout() {
 
     /** 
     //=>HERE WE USE FATCH AND SEND OUR DATA TO SERVER.
+    //=>WE SEND OUR DATA TO SERVER.
     fetch("http://localhost:3000/orders", {
       method: "POST",
       headers: {

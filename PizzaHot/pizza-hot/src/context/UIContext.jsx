@@ -4,7 +4,7 @@ export const UIContext = createContext();
 
 //=>This context allows us switch app pages.
 export function UIContextProvider({ children }) {
-  //-> Base on uiProgress state we switch the pages.
+  //=> Base on uiProgress state we switch the pages.
   const [uiProgress, setUIProgress] = useState("");
   function showCart() {
     setUIProgress("cart");
